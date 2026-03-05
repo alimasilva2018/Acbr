@@ -1,0 +1,228 @@
+{******************************************************************************}
+{ Projeto: Componentes ACBr                                                    }
+{  Biblioteca multiplataforma de componentes Delphi para intera��o com equipa- }
+{ mentos de Automa��o Comercial utilizados no Brasil                           }
+{                                                                              }
+{  Voc� pode obter a �ltima vers�o desse arquivo na pagina do  Projeto ACBr    }
+{ Componentes localizado em      http://www.sourceforge.net/projects/acbr      }
+{                                                                              }
+{  Esta biblioteca � software livre; voc� pode redistribu�-la e/ou modific�-la }
+{ sob os termos da Licen�a P�blica Geral Menor do GNU conforme publicada pela  }
+{ Free Software Foundation; tanto a vers�o 2.1 da Licen�a, ou (a seu crit�rio) }
+{ qualquer vers�o posterior.                                                   }
+{                                                                              }
+{  Esta biblioteca � distribu�da na expectativa de que seja �til, por�m, SEM   }
+{ NENHUMA GARANTIA; nem mesmo a garantia impl�cita de COMERCIABILIDADE OU      }
+{ ADEQUA��O A UMA FINALIDADE ESPEC�FICA. Consulte a Licen�a P�blica Geral Menor}
+{ do GNU para mais detalhes. (Arquivo LICEN�A.TXT ou LICENSE.TXT)              }
+{                                                                              }
+{  Voc� deve ter recebido uma c�pia da Licen�a P�blica Geral Menor do GNU junto}
+{ com esta biblioteca; se n�o, escreva para a Free Software Foundation, Inc.,  }
+{ no endere�o 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.          }
+{ Voc� tamb�m pode obter uma copia da licen�a em:                              }
+{ http://www.opensource.org/licenses/lgpl-license.php                          }
+{                                                                              }
+{ Daniel Sim�es de Almeida - daniel@projetoacbr.com.br - www.projetoacbr.com.br}
+{       Rua Coronel Aureliano de Camargo, 963 - Tatu� - SP - 18270-170         }
+{******************************************************************************}
+Agradecimentos:
+
+* Administradores:
+- Daniel Sim�es de Almeida
+
+{******************************************************************************
+|* ACBrLibMDFe
+|*
+|* PROP�SITO: Registro de Altera��es
+******************************************************************************}
+
+S�mbolo : Significado
+
+[+]     : Novo recurso
+[*]     : Recurso modificado/melhorado
+[-]     : Corre��o de Bug (assim esperamos)
+
+09/10/2025
+-- ACBrLibMDFeConsoleMT.lpi, ACBrLibMDFeConsoleMTDemo.lpi --
+[+] TK-7487 - Habilita 16KB de alinhamento nos LPI console da ACBrLibMDFe, obs: para ndk <=r22b
+   Adiciona flags de linker -k-z" common-page-size=16384" e -k-z" max-page-size=16384" 
+   no perfil de compilação android-arm64-v8a para resolver problemas de alinhamento de página e compatibilizar com Android 15+.
+   
+   Por: doszapro
+
+20/06/2025
+-- ACBrLibMDFeConsoleMT.lpi, ACBrLibMDFeConsoleMTDemo.lpi --
+[*] Remo��o das configura��es debug.
+   Por: Antonio Carlos Junior
+
+20/06/2025
+--- ACBrLibMDFe.lpi, ACBrLibMDFeDemo.lpi ---
+[*] Ajustes paths compila��o.
+   Por: Antonio Carlos Junior
+
+18/06/2025
+-- ACBrLibMDFeDataModule --
+[-] Ajuste necess�rio para compila��o da Lib depois de mudan�a da propriedade do Tipo de Ambiente.
+  Por: Diego Folieni \ Italo Giurizzato Junior \ Alexandre de Paula
+-- ACBrLibMDFeBase, ACBrLibMDFeResposta --
+[-] Ajustes necess�rios para compila��o da Lib depois de mudan�a da propriedade do Tipo de Ambiente.
+   Por: Diego Folieni \ Ant�nio Carlos \ Italo Giurizzato Junior
+
+09/06/2025
+-- ACBrLibNFSeConsoleMT.lpi, ACBrLibNFSeConsoleMTDemo.lpi --
+[+] Adicionado novo Projeto, 100% CONSOLE e MT vers�o Pro e Demonstra��o.
+[+] Compat�vel com compila��o em Linux 32 e 64, Android 32 e 64
+    Por: Antonio Carlos Junior
+
+28/04/2025
+-- ACBrMDFeBase.php, ACBrMDFeServicosMT.php, ACBrMDFeServicosST.php --
+[+] #TK-6871: Adicionado checkbox no programa de exemplo de MDFe em PHP para alimentar a propriedade SalvarEvento
+  Por: Renato Rubinho
+
+17/03/2025
+-- ACBrLibMDFeDataModule.pas --
+[*] Implementada fun��o B64CryptToString.
+    Por: Antonio Carlos Junior.
+
+31/10/2024
+-- Diversos --
+[+] #TK-4956-4: Implementados programas de exemplo em PHP da MDFe ST e MT.
+  Por: Renato Rubinho
+
+10/09/2024
+--- ACBrLibMDFeRespostas ---
+[*] #TK-5699: Adiciona NomeArq na resposta e tamb�m fun��o para garantir que sempre devolva Chave do MDFe 
+    no t�tulo da se��o
+    Por: Diego Folieni
+
+06/09/2024
+--- ACBrLibMDFeBase ---
+[*] LibMDFe PDF Evento Stream - #TK-5777
+    Realizado ajustes no m�todo SalvarEventoPDF.
+    Por: Antonio Carlos Junior
+
+15/08/2024
+--- ACBrLibMDFeBase, ACBrLibMDFeST, ACBrLibMDFeMT,
+    ACBrLibMDFeStaticImportST, ACBrLibMDFeStaticImportMT, ACBrLibMDFeRespostas ---
+[*] Ajustes para usar 'PAnsiChar' no lugar de 'PChar' e 'Integer' ao inves de 'LongInt'
+[*] Ajustes para usar 'ConverterStringEntrada' e 'ConverterStringSaida'
+    Por: Antonio Carlos Junior
+
+16/04/2024
+-- ACBrLibMDFeDataModule -- 
+[*] Corre��o da nomenclatura da classe Manifesto para TManifesto.
+    Por: Diego Folieni
+
+14/11/2023
+--- ACBrLibMDFeBase, ACBrLibMDFeST, ACBrLibMDFeMT, ACBrLibMDFeStaticImport, ACBrLibMDFeStaticImportMT ---
+[+] Inclus�o novos m�todos: MDFE_SalvarPDF e MDFE_SalvarEventoPDF
+    Por: Antonio Carlos Junior	
+
+10/01/2023
+--- ACBrLibMDFeBase ---
+[-] Corre��o para convers�o das respostas com Erros, em ANSI, se assim estiver configurado
+	Por: Antonio Carlos Junior
+
+30/11/2022
+--- ACBrLibMDFeBase ---
+[*] Concatena��o E.Message junto ao xMotivo para saber real motivo do Exception - #TK-3293
+	Por: Antonio Carlos Junior
+
+20/07/2022
+--- ACBrLibMDFe ---
+[*] Remo��o de Warning @deprecated ref. ACBrUtils
+
+28/06/2022
+--- ACBrLibMDFeConfig, ACBrLibMDFeConsts---
+[+] Adicionado propriedade ExibirMunicipioDescarregamento para impress�o do DAMDFe
+	Por: Jos� M S Junior
+
+21/12/2021
+--- ACBrLibMDFeDataModule ---
+[-] Corre��o para heren�a visual em Lazarus de "TLibDataModule"
+    (por: DSA)
+
+17/08/2021
+--- ACBrLibMDFeDataModule ---
+[*] Ajustado o DataModule para usar a classe base padr�o do projeto.
+	Por: Rafael Dias
+
+12/02/2021
+--- ACBrLiMDFeBase ---
+[-] Corre��o no metodo Validar o mesmo estava fazendo o retorno errado.
+	Por: Rafael Dias
+
+29/10/2020
+--- ACBrLiMDFeBase ---
+[-] Corre��o nos m�todos de impress�o de evento para carregar o conteudo do xml quando passado o mesmo.
+	Por: Rafael Dias
+[-] Corre��o nos m�todos de envio de email para carregar o conteudo do xml quando passado o mesmo.
+	Por: Rafael Dias
+
+07/09/2020
+--- ACBrLibMDFeMT, ACBrLibMDFeST ---
+[+] Removido o metodo MDFE_ConfigImportar.
+   Por: Rafael Dias
+[+] Removido o metodo MDFE_ConfigExportar.
+   Por: Rafael Dias
+[-] Removido o metodo MDFE_ImportarConfig.
+   Por: Rafael Dias
+
+27/02/2020
+--- ACBrLibMDFeClass ---
+[+] Adicionado o metodo um novo parametro ao metodo MDFE_Consultar, para definir se deve ou n�o extrair os eventos, se houverem, da resposta.
+    Por: Rafael Dias
+
+17/01/2020
+--- ACBrLibMDFeClass ---
+[+] Adicionado o metodo MDFE_GetPath e MDFE_GetPathEvento.
+    Por: Rafael Dias
+[-] Corrigido erro ao enviar email com PDF.
+    Por: Rafael Dias
+
+08/01/2020
+--- ACBrLibMDFeClass ---
+[+] Adicionado o metodo MDFE_GerarChave.
+   Por: Rafael Dias
+[+] Adicionado o metodo MDFE_ObterCertificados.
+   Por: Rafael Dias
+
+03/01/2020
+--- ACBrLibMDFeClass ---
+--- ACBrLibMDFeConfig ---
+[+] Adicionado o metodo ImportConfig para importar a configura��o do ACBrMonitor.
+    Por: Rafael Dias
+[-] Corrigido erro no metodo consultar.
+    Por: Rafael Dias
+
+30/12/2019
+--- ACBrLibMDFe ---
+[-] Corrigido o nome de saida na comp�la��o em linux x86.
+    Por: Rafael Dias
+
+19/12/2019
+--- ACBrLibMDFeRespostas ---
+[+] Incluido a propriedade Protocolo no retorno do Envio.
+    Por: Italo Jurisato Junior
+
+13/12/2019
+--- ACBrLibMDFeClass ---
+[-] Corre��o nos metodos MDFE_EncerrarMDFe e MDFE_ConsultaMDFeNaoEnc.
+    Por: Rafael Dias.
+
+19/09/2018
+--- ACBrLibMDFe ---
+[+] Inicio do projeto.
+    Por: Italo Jurisato Junior
+
+24/08/2018
+-- ACBrLibMDFeRespostas --
+[+] Acrescentado a propriedade Arquivo nas respostas de Cancelamento e Encerramento.
+    Por: Italo Jurisato Junior
+
+14/05/2018
+--- ACBrLibMDFe ---
+[+] Adicionado m�todos para retorno de envio do XML do componente MDFe
+ (Utilizado tamb�m pelo ACBrMonitorPlus).
+    Por: Italo Jurisato Junior
+

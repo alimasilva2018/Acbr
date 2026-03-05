@@ -1,0 +1,180 @@
+{******************************************************************************}
+{ Projeto: Componentes ACBr                                                    }
+{  Biblioteca multiplataforma de componentes Delphi para intera��o com equipa- }
+{ mentos de Automa��o Comercial utilizados no Brasil                           }
+{                                                                              }
+{  Voc� pode obter a �ltima vers�o desse arquivo na pagina do  Projeto ACBr    }
+{ Componentes localizado em      http://www.sourceforge.net/projects/acbr      }
+{                                                                              }
+{  Esta biblioteca � software livre; voc� pode redistribu�-la e/ou modific�-la }
+{ sob os termos da Licen�a P�blica Geral Menor do GNU conforme publicada pela  }
+{ Free Software Foundation; tanto a vers�o 2.1 da Licen�a, ou (a seu crit�rio) }
+{ qualquer vers�o posterior.                                                   }
+{                                                                              }
+{  Esta biblioteca � distribu�da na expectativa de que seja �til, por�m, SEM   }
+{ NENHUMA GARANTIA; nem mesmo a garantia impl�cita de COMERCIABILIDADE OU      }
+{ ADEQUA��O A UMA FINALIDADE ESPEC�FICA. Consulte a Licen�a P�blica Geral Menor}
+{ do GNU para mais detalhes. (Arquivo LICEN�A.TXT ou LICENSE.TXT)              }
+{                                                                              }
+{  Voc� deve ter recebido uma c�pia da Licen�a P�blica Geral Menor do GNU junto}
+{ com esta biblioteca; se n�o, escreva para a Free Software Foundation, Inc.,  }
+{ no endere�o 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.          }
+{ Voc� tamb�m pode obter uma copia da licen�a em:                              }
+{ http://www.opensource.org/licenses/lgpl-license.php                          }
+{                                                                              }
+{ Daniel Sim�es de Almeida - daniel@projetoacbr.com.br - www.projetoacbr.com.br}
+{       Rua Coronel Aureliano de Camargo, 963 - Tatu� - SP - 18270-170         }
+{******************************************************************************}
+Agradecimentos:
+
+* Administradores:
+- Daniel Sim�es de Almeida
+
+{******************************************************************************
+|* ACBrLibeSocial
+|*
+|* PROP�SITO: Registro de Altera��es
+******************************************************************************}
+
+S�mbolo : Significado
+
+[+]     : Novo recurso
+[*]     : Recurso modificado/melhorado
+[-]     : Corre��o de Bug (assim esperamos)
+
+09/10/2025
+-- ACBrLibeSocialConsoleMT.lpi, ACBrLibeSocialConsoleMTDemo.lpi --
+[+] TK-7487 - Habilita 16KB de alinhamento nos LPI console da ACBrLibeSocial, obs: para ndk <=r22b
+   Adiciona flags de linker -k-z" common-page-size=16384" e -k-z" max-page-size=16384" 
+   no perfil de compilação android-arm64-v8a para resolver problemas de alinhamento de página e compatibilizar com Android 15+.
+   
+   Por: doszapro
+
+03/09/2025
+-- ACBrLib.hnd --
+[*] ACBR-7988 - Atualizada documenta��o da Lib, adicionando a vers�o S01_03_00 e marcando as que foram depreciadas.
+-- FrmMain.cs, FrmMain.Designer.cs --
+[*] ACBR-7988 - Adicionada vers�o S01_03_00 no programa de exemplo em c#, corrigida leitura da VersaoDF e preenchimento na combo.
+    Por: Renato Rubinho
+
+01/09/2025
+-- ACBrLibeSocialDataModule.lfm --
+[-] Preenchida vers�o atual do leiaute no componente, corrigindo erro de inicializa��o devido �s vers�es antigas descontinuadas. - https://www.projetoacbr.com.br/forum/topic/85280-n%C3%A3o-consigo-atualizar-a-dll-do-esocial
+    Por: Renato Rubinho
+
+06/03/2025
+-- ACBrLibeSocial.lpi, ACBrLibeSocialDemo.lpi, ACBrLibeSocialConsoleMT.lpi e ACBrLibeSocialConsoleMTDemo.lpi--
+[*] Realizado ajustes nos paths para compila��o com os novos scripts do Jenkins.
+    Por: Antonio Carlos Junior
+
+27/02/2025
+-- ACBRLibeSocialConsts, ACBrLibeSocialRespostas --
+[*] TK-6455: Ajustes visando melhorar a resposta do comando DownloadEventos.
+   Por: Diego Folieni
+
+07/02/2025
+-- ACBrLibeSocialConsoleMT.lpi, ACBrLibeSocialConsoleMTDemo.lpi --
+[+] Adicionado novo Projeto, 100% CONSOLE e MT vers�o Pro e Demonstra��o.
+[+] Compat�vel com compila��o em Linux 64 e Android 32 e 64
+    Por: Antonio Carlos Junior
+
+13/08/2024
+--- ACBrLibeSocialBase, ACBrLibeSocialST, ACBrLibeSocialMT,
+    ACBrLibeSocialStaticImportST, ACBrLibeSocialStaticImportMT, ACBrLibeSocialRespostas ---
+[*] Ajustes para usar 'PAnsiChar' no lugar de 'PChar' e 'Integer' ao inves de 'LongInt'
+[*] Ajustes para usar 'ConverterStringEntrada' e 'ConverterStringSaida'
+    Por: Antonio Carlos Junior
+
+23/07/2024
+--- ACBrLibeSocialRespostas ---
+[-] Removido um end a mais que estava impedindo a compila��o ACBrMonitorPlus
+    Por: Daniel Morais InfoCotidiano
+
+19/07/2024
+--- ACBrLibeSocialRespostas ---
+[*]TK-5360-1 - Configurada lib e monitor para retornar na chave PathNome o nome do xml gerado
+--- FrmMain ---
+[*] Corrigidos m�todos de Consulta Identificadores, no programa de exemplo em C# - https://www.projetoacbr.com.br/forum/topic/77459-esocial-dll-pathnome/
+    Por: Renato Rubinho
+
+24/06/2024
+--- ACBrLibeSocialBase ---
+[*] Configurada lib para retornar os dados de envio no m�todo CriarEnviareSocial
+--- Diversos C# ---
+[*] Adicionados novos leiautes na combo de vers�es, tratado retorno do m�todo CriarEnviareSocial
+    Por: Renato Rubinho
+
+11/01/2023
+--- ACBrLibeSocialBase ---
+[-] Corre��o para convers�o das respostas com Erros, em ANSI, se assim estiver configurado
+	Por: Antonio Carlos Junior
+
+27/12/2022
+--- ACBrLibeSocialBase ---
+[*] Ajuste m�todo CarregarXMLEventoeSocial
+    Por Antonio Carlos Junior/Elton Barbosa
+
+14/12/2022
+--- ACBrLibeSocialRespostas ---
+[*] Ajustes Resposta Consultar eSocial
+    Por: Antonio Carlos Junior
+
+23/11/2022
+--- ACBrLibeSocial ---
+[+] Novo m�todo eSocial_Validar
+    Por: Antonio Carlos Junior
+
+18/11/2022
+--- ACBrLibeSocial ---
+[+] Novo m�todo eSocial_ObterCertificados
+	Por: Antonio Carlos Junior
+
+13/10/2022
+--- ACBrLibeSocial / ACBrLibeSocialConsts ---
+[*] Ajustes Vers�o ACBrLibeSocialConsts e Cria��o Vers�o x86 STDCALL MT
+    Por: Antonio Carlos
+
+28/09/2022
+--- ACBrLibeSocial ---
+[+] Cria��o ACBrLibeSocialDemo
+    Por: Antonio Carlos.
+
+22/08/2022
+--- ACBrLibeSocial ---
+[*] Corre��o unit ACBrLibeSocialMT
+    Por: Antonio Carlos
+
+22/08/2022
+--- ACBrLibeSocial ---
+[*] Corre��o Access Violation de alguns m�todos da ACBrLibeSocial
+    Por: Antonio Carlos / Juliomar Marchetti  
+
+17/08/2022
+--- ACBrLibeSocial ---
+[*] Refatora��o da ACBrLibeSocial e classe de Respostas
+
+20/07/2022
+--- ACBrLibeSocial ---
+[*] Remo��o de Warning @deprecated ref. ACBrUtils
+
+22/06/2022
+--- ACBrLibeSocial ---
+[+] Atualizado os fontes adicionando novos m�todos e adicionando a estrutura padr�o MultThread
+   Por: Antonio Carlos
+
+12/03/2018
+--- ACBrLibeSocialRespostas, ACBrLibeSocialConsts ---
+[+] Adicionado metodos de Respostas para M�todos de Consulta Eventos e Downloads
+   Por: Jos� M S Junior
+
+05/09/2018
+--- ACBrLibeSocial ---
+[+] Inicio do projeto.
+   Por: Italo Jurisato Junior
+
+14/05/2018
+--- ACBrLibeSocial ---
+
+[+] Adicionado m�todos para retorno de envio do XML do componente eSocial
+ (Utilizado tamb�m pelo ACBrMonitorPlus).
+
