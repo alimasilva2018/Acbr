@@ -12,5 +12,7 @@ ou (a seu critério) qualquer versão posterior.
 
 Esta biblioteca é distribuída na expectativa de que seja útil, porém, SEM NENHUMA GARANTIA; nem mesmo a 
 garantia implícita de COMERCIABILIDADE OU ADEQUAÇÃO A UMA FINALIDADE ESPECÍFICA. Consulte a Licença Pública Geral Menor
-do GNU para mais detalhes.
+do GNU para mais detalhes.'
+
+<meta name="google-site-verification" content="5f_AWABw4nkctrU39wavssuidjXpa0zfy3Dt4W3HEs4" />
 
