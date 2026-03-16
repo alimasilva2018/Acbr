@@ -1,11 +1,12 @@
-<meta name="google-site-verification" content="5f_AWABw4nkctrU39wavssuidjXpa0zfy3Dt4W3HEs4" />
+# ACBr Trunk2 - Espelho não oficial (Mirror)
 
-Este repositorio é um espelho NÃO OFICIAL do trunk2 do projeto ACBr a partir da revision 45200 criado em 16/03/2026.
+Espelho não oficial do ACBr Trunk2 a partir da revision 45200.
 
-Todos os creditos pelo material é do Projeto ACBr conforme termos em cada unit.
+ACBr é uma suite de componentes OpenSource para Delphi/Lazarus
+voltada para automação fiscal brasileira: NF-e, NFS-e, NFC-e,
+CT-e, MDF-e, boletos bancários, SAT, TEF e muito mais.
 
-O projeto ACBr é uma suite de componentes e soluções OpenSource multiplataforma.
-
+Todos os creditos pelo material é do Projeto ACBrt.
 Conforme termos:
 
 Esta biblioteca é software livre; você pode redistribuí-la e/ou modificá-la sob os termos da Licença 
